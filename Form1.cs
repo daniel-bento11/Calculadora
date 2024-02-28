@@ -39,7 +39,8 @@ namespace Calculadora
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //coloca focus no display
+            lblDisplay.Focus();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -60,7 +61,7 @@ namespace Calculadora
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+            lblDisplay.Focus();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -84,11 +85,79 @@ namespace Calculadora
                 lbl = lbl + "4";
                 lblDisplay.Text = this.lbl;
             }
-           
+            lblDisplay.Focus();
         }
 
         private void lblDisplay_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
+            if (e.KeyValue == (char)Keys.NumPad0 || e.KeyValue == (char)Keys.D0)
+            {
+                btn0_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.NumPad1 || e.KeyValue == (char)Keys.D1)
+            {
+                btn1_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.NumPad2 || e.KeyValue == (char)Keys.D2)
+            {
+                btn2_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.NumPad3 || e.KeyValue == (char)Keys.D3)
+            {
+                btn3_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.NumPad4 || e.KeyValue == (char)Keys.D4)
+            {
+                button1_Click_1(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.NumPad5 || e.KeyValue == (char)Keys.D5)
+            {
+                btn5_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.NumPad6 || e.KeyValue == (char)Keys.D6)
+            {
+                btn6_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.NumPad7 || e.KeyValue == (char)Keys.D7)
+            {
+                btn7_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.NumPad8 || e.KeyValue == (char)Keys.D8)
+            {
+                btn8_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.NumPad9 || e.KeyValue == (char)Keys.D9)
+            {
+                btn9_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.Back)
+            {
+                btnLimpar_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.Add)
+            {
+                button4_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.Subtract)
+            {
+                btnSub_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.Multiply)
+            {
+                bbtnMult_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.Divide)
+            {
+                btnDiv_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.Enter)
+            {
+                btnEqual_Click(sender, e);
+            }
+            if (e.KeyValue == (char)Keys.Decimal)
+            {
+                btnVirgula_Click(sender, e);
+            }
 
         }
 
@@ -112,7 +181,7 @@ namespace Calculadora
                 lbl = lbl + "7";
                 lblDisplay.Text = this.lbl;
             }
-          
+            lblDisplay.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -121,6 +190,7 @@ namespace Calculadora
             lbl = "0";
             lblDisplay.Text = this.lbl;
             lblConta.Text = "";
+            lblDisplay.Focus();
         }
 
         private void btn8_Click(object sender, EventArgs e)
@@ -143,7 +213,7 @@ namespace Calculadora
                 lbl = lbl + "8";
                 lblDisplay.Text = this.lbl;
             }
-       
+            lblDisplay.Focus();
         }
 
         private void btn9_Click(object sender, EventArgs e)
@@ -166,7 +236,7 @@ namespace Calculadora
                 lbl = lbl + "9";
                 lblDisplay.Text = this.lbl;
             }
- 
+            lblDisplay.Focus();
         }
 
         private void btn5_Click(object sender, EventArgs e)
@@ -189,7 +259,7 @@ namespace Calculadora
                 lbl = lbl + "5";
                 lblDisplay.Text = this.lbl;
             }
-          
+            lblDisplay.Focus();
         }
 
         private void btn6_Click(object sender, EventArgs e)
@@ -212,7 +282,7 @@ namespace Calculadora
                 lbl = lbl + "6";
                 lblDisplay.Text = this.lbl;
             }
-      
+            lblDisplay.Focus();
         }
 
         private void btn1_Click(object sender, EventArgs e)
@@ -235,7 +305,7 @@ namespace Calculadora
                 lbl = lbl + "1";
                 lblDisplay.Text = this.lbl;
             }
-
+            lblDisplay.Focus();
         }
 
             private void btn2_Click(object sender, EventArgs e)
@@ -258,8 +328,8 @@ namespace Calculadora
                     lbl = lbl + "2";
                     lblDisplay.Text = this.lbl;
                 }
-     
-            }
+            lblDisplay.Focus();
+        }
 
             private void btn3_Click(object sender, EventArgs e)
         {
@@ -281,7 +351,7 @@ namespace Calculadora
                 lbl = lbl + "3";
                 lblDisplay.Text = this.lbl;
             }
-
+            lblDisplay.Focus();
         }
 
         private void btn0_Click(object sender, EventArgs e)
@@ -305,7 +375,7 @@ namespace Calculadora
                 lbl = lbl + "0";
                 lblDisplay.Text = this.lbl;
             }
-
+            lblDisplay.Focus();
         }
 
         private void btnEqual_Click(object sender, EventArgs e)
@@ -350,6 +420,7 @@ namespace Calculadora
                 lblConta.Text = Convert.ToString(num1) + "÷" + Convert.ToString(num2) + "=";
                 operação = "null";
             }
+            lblDisplay.Focus();
 
         }
 
@@ -365,6 +436,7 @@ namespace Calculadora
             this.operação = "subtrair";
             lbl = "0";
             lblDisplay.Text = lbl;
+            lblDisplay.Focus();
         }
 
         private void bbtnMult_Click(object sender, EventArgs e)
@@ -378,6 +450,7 @@ namespace Calculadora
             this.operação = "multiplicação";
             lbl = "0";
             lblDisplay.Text = lbl;
+            lblDisplay.Focus();
         }
 
         private void btnDiv_Click(object sender, EventArgs e)
@@ -391,6 +464,7 @@ namespace Calculadora
             this.operação = "divisão";
             lbl = "0";
             lblDisplay.Text = lbl;
+            lblDisplay.Focus();
         }
 
         private void btnInt_Click(object sender, EventArgs e)
@@ -414,7 +488,7 @@ namespace Calculadora
                 lblDisplay.Text = lbl.TrimStart('-');
                 lbl = lblDisplay.Text;
             }
-
+            lblDisplay.Focus();
         }
 
         private void btnVirgula_Click(object sender, EventArgs e)
@@ -436,6 +510,7 @@ namespace Calculadora
                 lbl = lbl + ",";
                 lblDisplay.Text = this.lbl;
             }
+            lblDisplay.Focus();
         }
 
         private void btnDividir_Click(object sender, EventArgs e)
@@ -452,7 +527,8 @@ namespace Calculadora
             lblDisplay.Text = lbl;
             lblConta.Text = Convert.ToString(num1) + "%" + " =";
             operação = "null";
-            
+            lblDisplay.Focus();
+
         }
 
         private void btnMin_Click(object sender, EventArgs e)
@@ -472,6 +548,21 @@ namespace Calculadora
            
         }
 
+        private void lblDisplay_MouseClick(object sender, MouseEventArgs e)
+        {
+            lblDisplay.Focus();
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            lblDisplay.Focus();
+        }
+
+        private void lblConta_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnLimpar_Click(object sender, EventArgs e)
         {
           
@@ -489,7 +580,7 @@ namespace Calculadora
                     lbl = lbl.Substring(0, lbl.Length - 1);
                     lblDisplay.Text = this.lbl;
                 }
-            
+            lblDisplay.Focus();
 
         }
 
@@ -505,7 +596,7 @@ namespace Calculadora
             this.operação = "soma";
             lbl = "0";
             lblDisplay.Text = lbl;
-
+            lblDisplay.Focus();
         }
     }
 }

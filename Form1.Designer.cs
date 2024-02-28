@@ -140,6 +140,7 @@
             this.lblDisplay.Text = "0";
             this.lblDisplay.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.lblDisplay.Click += new System.EventHandler(this.label2_Click);
+            this.lblDisplay.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblDisplay_MouseClick);
             this.lblDisplay.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.lblDisplay_PreviewKeyDown);
             // 
             // btn4
@@ -511,6 +512,7 @@
             this.lblConta.Size = new System.Drawing.Size(515, 55);
             this.lblConta.TabIndex = 25;
             this.lblConta.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lblConta.Click += new System.EventHandler(this.lblConta_Click);
             // 
             // btnMin
             // 
@@ -570,6 +572,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
